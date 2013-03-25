@@ -131,4 +131,4 @@ xom;xmlParserAPIs;1;true
 xstream;jackson;1;true
 xerces;xalan;1;true
 xalan;saxon;1;true
-saxon;jaxb2-basics-runtime;1;true
+saxon;jaxb2;1;true
