@@ -17,7 +17,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
-import fr.labri.seutils.structure.Pair;
+import fr.labri.utils.collections.Pair;
 import gnu.trove.iterator.TIntIterator;
 import gnu.trove.list.array.TIntArrayList;
 import gnu.trove.set.hash.THashSet;
@@ -187,8 +187,8 @@ public class MigrationComputing {
 	private static boolean isRelevantMessage(String message, String source,
 			String target) {
 		
-		//return basicCompare(message, source, target);
-		return tokenCompare(message, source, target);
+		return basicCompare(message, source, target);
+		//return tokenCompare(message, source, target);
 	}
 
 	private static boolean basicCompare(String message, String source,

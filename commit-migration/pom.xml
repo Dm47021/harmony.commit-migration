@@ -7,14 +7,9 @@
 
    <repositories>
 		<repository>
-			<id>sphere</id>
-			<name>Sphere repository</name>
-			<url>http://sphere.labri.fr/maven</url>
-		</repository>
-		<repository>
 			<id>se</id>
-			<name>Sphere repository</name>
-			<url>http://sphere.labri.fr/maven</url>
+			<name>SE repository</name>
+			<url>http://se.labri.fr/maven</url>
 		</repository>
 	</repositories>
 	<properties>
@@ -38,8 +33,8 @@
 	</build>
 	<dependencies>
 		<dependency>
-			<groupId>fr.labri.seutils</groupId>
-			<artifactId>seutils</artifactId>
+			<groupId>fr.labri.utils</groupId>
+			<artifactId>utils</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>

@@ -1,17 +1,14 @@
 package fr.labri.harmony.analysis.migration.scanlib;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import fr.labri.seutils.structure.Pair;
-
+import fr.labri.utils.collections.Pair;
 
 public class GetTrueRules {
 
@@ -25,7 +22,6 @@ public class GetTrueRules {
 				rules.add(tk[0]+";"+tk[1]+":"+tk[2]);
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -40,27 +36,6 @@ public class GetTrueRules {
 		}
 
 		return false;
-	}
-
-	public static void main(String[] args) throws IOException {
-		String dir = "/home/cteyton/Documents/travail/Projets/MigrationAnalysis/JSPE/";
-
-		String filename="collections_score";
-		FileWriter fw = new FileWriter(dir+filename+".csv");
-		List<String> libs = Arrays.asList("hppc","lambdaj","colt","trove4j","mahout","guava","commons-collections","javolution","lucene","collections-generic");
-		fw.write("A;B;C\n");
-		for(String source : libs) {
-			for(String target : libs) {
-				for(String rule : rules) {
-					String tk[] = rule.split("\\:");
-					if(tk[0].equals(source+";"+target)){
-						System.out.println(tk[0]+";"+tk[1]);
-						fw.write(tk[0]+";"+tk[1]+"\n");
-					}
-				}
-			}
-		}
-		fw.close();
 	}
 
 }
