@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="fr.labri.harmony.analysis.migration.scanlib">
+
+	<class name="ProjectStep">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		
+		<property name="step" not-null="true" />
+		
+		<property name="timestamp" not-null="true" />
+		
+		<set name="libraries" cascade="save-update">
+			<key column="project_step_id" />
+			<element column="libraries" type="text"/>
+		</set>
+	
+		<set name="imports" cascade="save-update">
+			<key column="project_step_id" />
+			<element column="imports" type="text"/>
+		</set>
+		
+		<set name="commits" cascade="save-update">
+			<key column="project_step_id" />
+			<element column="commits" type="text"/>
+		</set>
+		
+	</class>
+	
+	<class name="Project">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		
+		<property name="url" not-null="true" />
+		
+		<list name="steps" cascade="save-update" lazy="true">
+			<key column="step_id" not-null="true"/>
+			<list-index column="pos"/>
+			<one-to-many class="ProjectStep"/>
+		</list>
+		
+		
+	</class>
+	
+
+
+</hibernate-mapping>
