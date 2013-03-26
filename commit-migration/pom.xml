@@ -1,11 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>fr.labri.harmony</groupId>
-  <artifactId>commit-migration</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>commit-migration</name>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.labri.harmony</groupId>
+	<artifactId>commit-migration</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>commit-migration</name>
 
-   <repositories>
+	<repositories>
 		<repository>
 			<id>se</id>
 			<name>SE repository</name>
@@ -27,8 +28,8 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
-			
-			
+
+
 		</plugins>
 	</build>
 	<dependencies>
@@ -48,19 +49,30 @@
 			<version>4.1.7.Final</version>
 		</dependency>
 		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.7.2</version>
+		</dependency>
+
+		<dependency>
 			<groupId>net.sf.trove4j</groupId>
 			<artifactId>trove4j</artifactId>
 			<version>3.0.3</version>
 		</dependency>
-    </dependencies>
-    <distributionManagement>
-                <repository>
-                        <id>se</id>
-                        <url>dav:https://webdav.labri.fr/vhosts/se.labri.fr/maven/</url>
-                </repository>
-                <snapshotRepository>
-                        <id>se</id>
-                        <url>dav:https://webdav.labri.fr/vhosts/se.labri.fr/maven/</url>
-                </snapshotRepository>
-        </distributionManagement>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.12</version>
+		</dependency>
+	</dependencies>
+	<distributionManagement>
+		<repository>
+			<id>se</id>
+			<url>dav:https://webdav.labri.fr/vhosts/se.labri.fr/maven/</url>
+		</repository>
+		<snapshotRepository>
+			<id>se</id>
+			<url>dav:https://webdav.labri.fr/vhosts/se.labri.fr/maven/</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
