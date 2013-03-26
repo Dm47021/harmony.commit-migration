@@ -132,3 +132,6 @@ xstream;jackson;1;true
 xerces;xalan;1;true
 xalan;saxon;1;true
 saxon;jaxb2;1;true
+commons-cli;args4j;1;true
+jopt-simple;commons-cli;1;true
+

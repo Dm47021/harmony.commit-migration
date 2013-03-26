@@ -1,4 +1,4 @@
-log4j;slf4j;true
+flog4j;slf4j;true
 commons-logging;slf4j;true
 commons-httpclient;httpclient;true
 commons-httpclient;httpcore;true
@@ -1003,7 +1003,7 @@ httpcore;imgscalr-lib;false
 lucene;org.restlet;false
 guava;libvirt;false
 postgresql;sqlite-jdbc;true
-commons-cli;args4j;false
+commons-cli;args4j;true
 jackson;hk2;false
 commons-cli;apache-felix;false
 commons-cli;xmlgraphics-commons;false
@@ -1875,7 +1875,7 @@ groovy;commons-cli;false
 asm;commons-cli;false
 dozer;commons-cli;false
 commons-configuration;commons-cli;false
-jopt-simple;commons-cli;false
+jopt-simple;commons-cli;true
 jaxen;commons-cli;false
 jettison;commons-cli;false
 httpasyncclient;commons-cli;false
