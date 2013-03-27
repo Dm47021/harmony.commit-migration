@@ -19,9 +19,11 @@ public class AddGoogleInfo {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		ObjectMapper map = new ObjectMapper();
 		String baseUrl = "https://www.googleapis.com/customsearch/v1?key=" + args[0] + "&cx=" + args[1] + "&q=";
-		ArrayNode rules = (ArrayNode) map.readTree(new File("data/migration-rules-clean-active.json"));
+		ArrayNode rules = (ArrayNode) map.readTree(new File("data/MigrationRules.json"));
 		System.out.println(rules.size());
-		for (int i = 0; i < rules.size(); i++) {
+		int beginIdx = 0;
+		if (args.length > 2) beginIdx = Integer.parseInt(args[2]); 
+		for (int i = beginIdx; i < rules.size(); i++) {
 			JsonNode rule = rules.get(i);
 			ObjectNode metadata = (ObjectNode) rule.get("metadata");
 			System.out.print(i + " ");
@@ -40,8 +42,8 @@ public class AddGoogleInfo {
 				ArrayNode items = (ArrayNode) root.get("items");
 				if (nbItems > 0) for (int j = 0; j < items.size(); j++) google.add(items.get(j).get("snippet").asText());
 				metadata.put("google-migration", google);
-			} else System.out.print("done\n");
-			map.writeValue(new File("data/migration-rules-clean-active.json"), rules);
+				map.writeValue(new File("data/MigrationRules.json"), rules);
+			} else System.out.print("done\n");	
 		}
 	}
 
